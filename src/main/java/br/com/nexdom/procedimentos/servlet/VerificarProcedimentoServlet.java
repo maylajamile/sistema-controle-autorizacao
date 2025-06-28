@@ -1,6 +1,7 @@
 package br.com.nexdom.procedimentos.servlet;
 
 import br.com.nexdom.procedimentos.dao.AutorizacaoDAO;
+import br.com.nexdom.procedimentos.service.AutorizacaoService;
 import com.google.gson.Gson;
 
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import java.util.Map;
 @WebServlet("/verificarProcedimento")
 public class VerificarProcedimentoServlet extends HttpServlet {
 
-    private final AutorizacaoDAO dao = new AutorizacaoDAO();
+    private final AutorizacaoService service = new AutorizacaoService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -22,7 +23,7 @@ public class VerificarProcedimentoServlet extends HttpServlet {
         if (numeroStr != null && !numeroStr.isEmpty()) {
             try {
                 int numero = Integer.parseInt(numeroStr);
-                existe = dao.existeProcedimento(numero);
+                existe = service.existeProcedimento(numero);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }

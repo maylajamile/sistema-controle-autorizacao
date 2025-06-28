@@ -10,6 +10,11 @@
     <script src="<c:url value='/js/script.js'/>" defer></script>
 </head>
 <body>
+    <c:if test="${not empty mensagem}">
+        <div class="mensagem ${tipoMensagem}">
+            ${mensagem}
+        </div>
+    </c:if>
     <div class="container">
         <h2>Cadastrar Procedimento</h2>
         <div class="underline"></div>
