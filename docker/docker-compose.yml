@@ -7,8 +7,22 @@ services:
       - "8080:8080"
     depends_on:
       - db
+      - liquibase
     environment:
       - JAVA_OPTS=-Djboss.http.port=8080
+
+  liquibase:
+    build:
+      context: ..
+      dockerfile: docker/liquibase.Dockerfile
+    depends_on:
+      - db
+    command: >
+      --url=jdbc:postgresql://db:5432/autorizacoes
+      --changeLogFile=changelog/db.changelog-master.xml
+      --username=admin
+      --password=admin
+      update
 
   db:
     image: postgres:16
