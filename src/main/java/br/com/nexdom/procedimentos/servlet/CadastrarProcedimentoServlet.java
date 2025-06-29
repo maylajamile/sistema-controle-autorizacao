@@ -1,7 +1,8 @@
 package br.com.nexdom.procedimentos.servlet;
 
-import br.com.nexdom.procedimentos.dao.AutorizacaoDAO;
 import br.com.nexdom.procedimentos.service.AutorizacaoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.Period;
 
 @WebServlet("/cadastrarProcedimento")
 public class CadastrarProcedimentoServlet extends HttpServlet {
 
+    private static final Logger log = LoggerFactory.getLogger(CadastrarProcedimentoServlet.class);
     private final AutorizacaoService service = new AutorizacaoService();
 
     @Override
@@ -37,7 +38,7 @@ public class CadastrarProcedimentoServlet extends HttpServlet {
             request.getRequestDispatcher("/index.jsp").forward(request, response);
 
         } catch (ServletException | IOException e) {
-            e.printStackTrace();
+            log.error("[ERRO] - NÃO FOI POSSIVEL REALIZAR A REQUISIÇÃO. " + e.getMessage());
         }
     }
 }

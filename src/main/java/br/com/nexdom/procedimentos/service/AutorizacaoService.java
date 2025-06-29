@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 public class AutorizacaoService {
 
     public boolean verificarAutorizacao(int numero, LocalDate dataNascimento, String sexo) {
+        // Para calcular a idade usando o mês e ano
         int idade = Period.between(dataNascimento, LocalDate.now()).getYears();
 
         EntityManager em = JPAUtil.getEntityManager();

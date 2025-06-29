@@ -4,6 +4,7 @@
 <html lang="pt-BR">
 <head>
     <title>Cadastrar Procedimento</title>
+    <link rel="icon" type="image/x-icon" href="<c:url value='/image/icone.png'/>">
     <link rel="stylesheet" href="<c:url value='/css/styles.css'/>" defer>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,19 +22,19 @@
 
         <form action="cadastrarProcedimento" method="post">
             <div class="input-field">
-                <label for="numero">Número do Procedimento</label>
+                <label for="numero">Número do Procedimento:</label>
                 <i class="fa fa-file-medical"></i>
                 <input type="text" name="numero" id="numero" required>
             </div>
 
             <div class="input-field">
-                <label for="dataNascimento">Data de Nascimento</label>
+                <label for="dataNascimento">Data de Nascimento:</label>
                 <i class="fa fa-calendar"></i>
                 <input type="date" name="dataNascimento" id="dataNascimento" required>
             </div>
 
             <div class="input-field">
-                <label for="sexo">Sexo</label>
+                <label for="sexo">Sexo:</label>
                 <i class="fa fa-venus-mars"></i>
                 <select name="sexo" id="sexo" required>
                     <option value="" disabled selected>Selecione</option>

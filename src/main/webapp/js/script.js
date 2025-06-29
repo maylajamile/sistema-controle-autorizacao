@@ -20,8 +20,13 @@ $(document).ready(function () {
                 }
             })
             .fail(function () {
-                console.error("Erro ao verificar número do procedimento.");
                 inputField.find('#mensagemErro').remove();
             });
     });
+});
+
+$(document).ready(function() {
+    setTimeout(function() {
+        $('.mensagem').fadeOut('slow');
+    }, 5000);
 });
