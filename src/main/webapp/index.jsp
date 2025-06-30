@@ -24,7 +24,7 @@
             <div class="input-field">
                 <label for="numero">Número do Procedimento:</label>
                 <i class="fa fa-file-medical"></i>
-                <input type="text" name="numero" id="numero" required>
+                <input type="number" name="numero" id="numero" min="1" step="1" required>
             </div>
 
             <div class="input-field">
