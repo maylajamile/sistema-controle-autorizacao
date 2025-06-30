@@ -8,5 +8,4 @@
 
     <include file="001-create-autorizacao-table.xml" relativeToChangelogFile="true"/>
     <include file="002-insert-dados-iniciais.xml" relativeToChangelogFile="true"/>
-
 </databaseChangeLog>

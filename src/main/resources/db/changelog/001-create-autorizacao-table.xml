@@ -17,5 +17,4 @@
             <column name="permitido" type="BOOLEAN"/>
         </createTable>
     </changeSet>
-
 </databaseChangeLog>

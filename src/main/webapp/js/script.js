@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#numero').on('input', function () {
+    $('#numero').on('blur', function () {
         const numero = $(this).val();
         const inputField = $(this).closest('.input-field');
 

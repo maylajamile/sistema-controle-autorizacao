@@ -1,8 +1,6 @@
 services:
   wildfly:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
+    image: jboss/wildfly:21.0.0.Final
     ports:
       - "8080:8080"
     depends_on:
@@ -10,13 +8,15 @@ services:
       - liquibase
     environment:
       - JAVA_OPTS=-Djboss.http.port=8080
+    volumes:
+      - ./target/sistema-controle-autorizacoes.war:/opt/jboss/wildfly/standalone/deployments/sistema-controle-autorizacoes.war
 
   liquibase:
-    build:
-      context: ..
-      dockerfile: docker/liquibase.Dockerfile
+    image: liquibase/liquibase
     depends_on:
       - db
+    volumes:
+      - ./src/main/resources/db/changelog:/liquibase/changelog
     command: >
       --url=jdbc:postgresql://db:5432/autorizacoes
       --changeLogFile=changelog/db.changelog-master.xml

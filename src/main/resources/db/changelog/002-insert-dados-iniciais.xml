@@ -58,5 +58,4 @@
             <column name="permitido" valueBoolean="true"/>
         </insert>
     </changeSet>
-
 </databaseChangeLog>
