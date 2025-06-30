@@ -14,15 +14,22 @@ com a tabela a seguir:
 
 <em>Você vai precisar do docker para iniciar os serviços</em>
 
-<strong>1. Execute o comando para gerar o arquivo war da aplicação:</strong>
+<strong>1. Execute um dos comandos para gerar o arquivo war da aplicação:</strong>
 
   ```bash
   mvn clean package
   ```
+  ```bash
+  ./mvnw clean package
+  ```
+
 ou (para pular os testes de integração) 
 
   ```bash
   mvn clean package -DskipTests
+  ```
+  ```bash
+  ./mvnw clean package -DskipTests
   ```
 
 
